@@ -12,7 +12,11 @@ export class WebRtcPeer extends EventEmitter {
      * Using this property the user can get the peerConnection and use it directly.
      */
     peerConnection: RTCPeerConnection;
-
+    /* added by efficient apps aug 2023
+    */
+    audioEnabled: boolean;
+    videoEnabled: boolean;
+    
     constructor(
         mode: 'recv' | 'send' | 'sendRecv',
         options?: object,
@@ -101,5 +105,12 @@ export class WebRtcPeer extends EventEmitter {
     static WebRtcPeerSendrecv: (
         options: object,
         callback: (error: string | undefined) => void
+    ) => WebRtcPeer;
+
+    /* added by efficient apps aug 2023
+    */
+        static hark: (
+        stream: MediaStream,
+        options : object
     ) => WebRtcPeer;
 }
