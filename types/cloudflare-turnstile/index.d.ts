@@ -1,12 +1,13 @@
-// Type definitions for non-npm package Cloudflare Turnstile 0.1
-// Project: https://www.cloudflare.com/products/turnstile
-// Definitions by: Jason Gerbes <https://github.com/jasongerbes>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-
 declare const turnstile: Turnstile.Turnstile;
 
 declare namespace Turnstile {
     interface Turnstile {
+        /**
+         * Registers a callback to be invoked when the turnstile is ready.
+         * @param callback A callback function to be executed when the turnstile is ready. Use this callback to perform actions upon turnstile readiness.
+         */
+        ready(callback: () => void): void;
+
         /**
          * Invokes a Turnstile widget and returns the ID of the newly created widget.
          * @param container The HTML element to render the Turnstile widget into. Specify either the ID of HTML element (string), or the DOM element itself.
@@ -33,7 +34,7 @@ declare namespace Turnstile {
      * The theme of the Turnstile widget.
      * The default is "auto", which respects the user preference. This can be forced to "light" or "dark" by setting the theme accordingly.
      */
-    type Theme = 'auto' | 'light' | 'dark';
+    type Theme = "auto" | "light" | "dark";
 
     /**
      * Parameters for the turnstile.render() method.
@@ -63,12 +64,12 @@ declare namespace Turnstile {
         /**
          * Optional. A JavaScript callback that is invoked when a challenge expires.
          */
-        'expired-callback'?: VoidFunction;
+        "expired-callback"?: VoidFunction;
 
         /**
          * Optional. A JavaScript callback that is invoked when there is a network error.
          */
-        'error-callback'?: VoidFunction;
+        "error-callback"?: VoidFunction;
 
         /**
          * Optional. The widget theme.

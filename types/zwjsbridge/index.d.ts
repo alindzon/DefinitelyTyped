@@ -1,9 +1,3 @@
-// Type definitions for non-npm package ZWJSBridge API - zwjsbridge.js 1.1
-// Project: https://assets.zjzwfw.gov.cn/assets/ZWJSBridge/1.1.0/zwjsbridge.js
-// Definitions by: Yuxiang Ren <https://github.com/shlyren>, Jungzl <https://github.com/jungzl>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// TypeScript Version: 4.2
-
 /**
  * “浙里办”政务中台 JSBridge API
  * This API just for [浙里办](https://apps.apple.com/us/app/zhe-jiang-zheng-wu-fu-wu/id910260096)
@@ -36,7 +30,7 @@ interface UploadFileOptions {
  */
 interface UploadFileResult {
     /** 上传状态 */
-    status: 'success' | 'fail';
+    status: "success" | "fail";
     /** 上传文件地址 */
     filePath: string[];
     /** 选择文件名称 */
@@ -129,7 +123,7 @@ interface ZWJSBridge {
      */
     openLink(options: {
         /** 重新发起单点 适用于微信小程序环境 */
-        type?: 'reload';
+        type?: "reload";
         /** 重定向地址 */
         url?: string;
     }): Promise<{
@@ -327,7 +321,7 @@ interface ZWJSBridge {
         /**
          * type: "qrCode"
          */
-        type: 'qrCode';
+        type: "qrCode";
     }): Promise<{
         text: string;
     }>;
@@ -356,7 +350,6 @@ interface ZWJSBridge {
         credential: string;
         /**
          * 是否为测试环境，缺省为False。支付宝只支持Android端
-         *
          */
         inSandBox?: boolean;
     }): Promise<any>;
@@ -434,7 +427,7 @@ interface ZWJSBridge {
          * fail
          * exception，值为exception时，必须上传文字信息。
          */
-        type?: 'none' | 'success' | 'fail' | 'exception';
+        type?: "none" | "success" | "fail" | "exception";
         /** 消息内容 */
         message?: string;
         /** 消息显示持续时间，单位毫秒，默认值为2000s */
@@ -451,7 +444,7 @@ interface ZWJSBridge {
          * number
          * password
          */
-        inputType?: 'text' | 'number' | 'password';
+        inputType?: "text" | "number" | "password";
         /** 文本框中的实际消息内容 */
         message?: string;
         /** 文本框的标题 */
@@ -548,7 +541,7 @@ interface ZWJSBridge {
          * weibo，微博。
          * dingtlk，钉钉。
          */
-        channel?: 'wechat' | 'wechat_moments' | 'weibo' | 'dingtlk';
+        channel?: "wechat" | "wechat_moments" | "weibo" | "dingtlk";
         /** 分享标题 */
         title?: string;
         /** 分享内容 */
